@@ -156,8 +156,20 @@ const clearBtn = document.getElementById("clear-button");
 const filterOpt = document.getElementById("filter-option");
 const countText = document.querySelector(".search p");
 const bucket = document.getElementById("bucket");
+const popUp = document.querySelector(".overlay");
 
 // ----
+
+// Custom framework (bikin sendiri)
+
+function renderObj(type, Class, Content) {
+  const doc = document.createElement(type);
+  if (Array.isArray(Class)) {
+    Class.forEach((element) => doc.classList.add(element));
+  }
+  doc.textContent = Content;
+  return doc;
+}
 
 countText.textContent = `Menampilkan ${katalogItem.length} dari ${katalogItem.length} item.`;
 
@@ -167,9 +179,7 @@ function renderFilterBtn(filter, tipe) {
   searchTipe.textContent = "";
   let fragment = document.createDocumentFragment();
   for (const type of filter) {
-    const tagBtn = document.createElement("button");
-    tagBtn.textContent = type;
-    tagBtn.classList.add("filter-btn");
+    const tagBtn = renderObj("button", ["filter-btn"], type);
     tagBtn.addEventListener("click", () => {
       if (tagBtn.classList.contains("aktif")) {
         tagBtn.classList.remove("aktif");
@@ -210,107 +220,127 @@ function renderBrand() {
     item.classList.add("brand-card");
     let fig = document.createElement("figure");
     let image = document.createElement("img");
-    let text = document.createElement("strong");
-    text.textContent = elem.displayName;
     image.src = elem.img;
     image.loading = "lazy";
     image.decoding = "async";
     fig.appendChild(image);
 
-    item.appendChild(fig);
-    item.append(text);
+    item.append(fig, renderObj("strong", [], elem.displayName));
     fragment.append(item);
   }
   Brand.append(fragment);
 }
 renderBrand(brands);
 
+function renderBelanja() {
+  popUp.querySelector(".belanja").textContent = "";
+  for (const beli of buy) {
+    const div = renderObj("div", ["belanja-item"], "");
+    const btn = renderObj("button", ["belanja-remove"], "x");
+    div.append(
+      btn,
+      renderObj("p", ["tech-name", "blue"], beli.productName),
+      renderObj(
+        "p",
+        ["belanja-harga"],
+        `Harga: Rp ${beli.price.toLocaleString("ID")}`,
+      ),
+      renderObj(
+        "p",
+        ["belanja-diskon"],
+        `Diskon: Rp ${((beli.price * beli.discount) / 100).toLocaleString("ID")} (Diskon ${beli.discount})`,
+      ),
+      renderObj(
+        "p",
+        ["belanja-hargaTotal"],
+        `Harga akhir: Rp ${(beli.price - (beli.price * beli.discount) / 100).toLocaleString("ID")}`,
+      ),
+    );
+    btn.addEventListener("click", (event) => {
+      event.target.closest(".belanja-item").remove();
+      const hasil = [];
+      popUp
+        .querySelector(".belanja")
+        .querySelectorAll(".belanja-item")
+        .forEach((n) => hasil.push(n.querySelector(".tech-name").textContent));
+      buy = hasil.map((hasil) =>
+        katalogItem.find((f) => hasil === f.productName),
+      );
+      bucket.textContent =
+        buy.length > 0 ? `Keranjang (${buy.length})` : "Keranjang";
+      if (!buy.length)
+        popUp.querySelector(".belanja").textContent =
+          "Oops! Sepertinya belum ada belanjaan.";
+    });
+    popUp.querySelector(".belanja").append(div);
+  }
+}
+
 renderKatalog(katalogItem);
 function renderKatalog(item) {
   let fragment = document.createDocumentFragment();
   for (let elem of item) {
-    let item = document.createElement("article");
-    item.classList.add(elem.class, "card");
-    let top = document.createElement("div");
-    top.classList.add("card-top");
+    const item = renderObj("article", [elem.class, "card"], "");
+    const top = renderObj("div", ["card-top"], "");
 
-    let highLight = document.createElement("span");
-    highLight.textContent = elem.hightLight;
-    highLight.className = elem.tagColor;
-    top.appendChild(highLight);
-
-    let type = document.createElement("span");
-    type.textContent = elem.type;
-    type.className = "grayTag grayed";
-    top.appendChild(type);
+    top.append(
+      renderObj("span", [elem.tagColor], elem.hightLight),
+      renderObj("span", ["grayTag", "grayed"], elem.type),
+    );
 
     let fig = document.createElement("figure");
-    let discount = document.createElement("span");
-    discount.textContent = `-${elem.discount}%`;
-    discount.className = "diskon";
 
     let img = document.createElement("img");
     img.src = elem.link;
     img.loading = "lazy";
     img.decoding = "async";
     img.alt = elem.brand;
-    fig.append(discount, img);
+    fig.append(renderObj("span", ["diskon"], `-${elem.discount}`), img);
 
-    let price = document.createElement("p");
-    price.textContent = `Rp ${elem.price.toLocaleString("ID")}`;
-    price.classList.add("price-tag", "blue");
+    let div = renderObj("div", ["card-tag"], "");
 
-    let techName = document.createElement("p");
-    techName.textContent = elem.productName;
-    techName.className = "tech-name";
-    item.append(techName);
+    elem.tag.forEach((n) => div.append(renderObj("span", [], n)));
 
-    let text = document.createElement("p");
-    text.textContent = elem.displayText;
+    const bottom = renderObj("div", ["mainButton-container"], "");
+    const beliBtn = renderObj("button", ["beli-button"], "Beli Sekarang");
 
-    let div = document.createElement("div");
-    div.classList.add("card-tag");
-
-    for (let text of elem.tag) {
-      let span = document.createElement("span");
-      span.textContent = text;
-      div.append(span);
-    }
-
-    let bottom = document.createElement("div");
-    bottom.classList.add("mainButton-container");
-    let beliBtn = document.createElement("button");
-    beliBtn.textContent = "Beli Sekarang";
-    beliBtn.classList.add("beli-button");
     beliBtn.addEventListener("click", (event) => {
-      const it = event.target.closest(".card");
-      const dataT = katalogItem.find(
-        (n) => n.productName === it.querySelector("p"),
+      buy.push(
+        katalogItem.find(
+          (n) =>
+            n.productName ===
+            event.target.closest(".card").querySelector(".tech-name")
+              .textContent,
+        ),
       );
-      buy.push(dataT);
+      renderBelanja();
       bucket.textContent = `Keranjang (${buy.length})`;
     });
 
-    let spekBtn = document.createElement("button");
-    spekBtn.textContent = "Spesifikasi";
-    spekBtn.classList.add("spesifikasi-button");
-
+    const spekBtn = renderObj("button", ["spesifikasi-button"], "Spesifikasi");
     bottom.append(beliBtn, spekBtn);
-    item.append(top, fig, price, techName, text, div, bottom);
+    item.append(
+      top,
+      fig,
+      renderObj(
+        "p",
+        ["price-tag", "blue"],
+        `Rp ${elem.price.toLocaleString("ID")}`,
+      ),
+      renderObj("p", ["tech-name"], elem.productName),
+      renderObj("p", [], elem.displayText),
+      div,
+      bottom,
+    );
 
-    spekBtn.addEventListener("click", () => {
-      if (document.querySelector(".spek")) {
-        document.querySelector(".spek").remove();
+    spekBtn.addEventListener("click", (event) => {
+      if (event.target.closest(".card").querySelector(".spek")) {
+        event.target.closest(".card").querySelector(".spek").remove();
       } else {
-        let spek = document.createElement("section");
-        spek.classList.add("spek");
+        const spek = renderObj("section", ["spek"], "");
         for (const textSpek of elem.tag) {
           spek.textContent += `${textSpek} . `;
         }
-        spek.style.padding = "10px";
-        spek.style.borderLeft = "5px solid var(--green-bg)";
-        spek.style.backgroundColor = "var(--gray-bg)";
-        spek.style.borderRadius = "8px";
         bottom.before(spek);
       }
     });
@@ -342,12 +372,19 @@ clearBtn.addEventListener("click", () => {
   renderKatalog(katalogItem);
   searchInput.focus();
 });
-
 searchInput.addEventListener("focus", () => {
   searchInput.style.outline = "none";
   searchBar.style.border = "var(--gray-border)";
 });
-
 searchInput.addEventListener("blur", () => {
   searchBar.style.border = "none";
+});
+bucket.addEventListener("click", () => {
+  if (!buy.length)
+    popUp.querySelector(".belanja").textContent =
+      "Oops! Sepertinya belum ada belanjaan.";
+  popUp.classList.toggle("aktif");
+});
+popUp.addEventListener("click", (event) => {
+  if (event.target === popUp) popUp.classList.remove("aktif");
 });

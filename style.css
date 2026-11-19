@@ -18,7 +18,9 @@
   --orange-bg: #ff9a3b;
   --green-bg: #00bd00;
 }
-
+body::-webkit-scrollbar {
+  display: none;
+}
 .grayed,
 #judulsection,
 nav a {
@@ -114,7 +116,7 @@ nav {
   border-radius: 5px;
   padding: 8px;
 }
-.aktif {
+.filter-btn.aktif {
   background-color: var(--green-bg);
   color: white;
 }
@@ -311,7 +313,81 @@ main {
   margin: 2rem auto;
   padding: 0 2rem;
 }
-
+.belanja {
+  scrollbar-width: none;
+  height: 100%;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.scroll-wrap {
+  position: fixed;
+  width: 80vw;
+  left: 10vw;
+  top: 30vh;
+  background-color: white;
+  padding: 1rem;
+  height: 60vh;
+  overflow: hidden;
+  border: var(--gray-border);
+  border-radius: 1rem;
+}
+.belanja-item {
+  padding: 10px;
+  border-radius: 1rem;
+  border: var(--gray-border);
+  position: relative;
+}
+.belanja-harga,
+.belanja-diskon,
+.belanja-hargaTotal {
+  display: inline-block;
+  padding: 5px;
+  border-radius: 20rem;
+  font-weight: bolder;
+}
+.belanja-diskon {
+  border: 1px solid #ff9900;
+  background-color: #ffcd8b;
+  color: #d84f00;
+  margin-inline: 5px;
+}
+.belanja-harga {
+  border: var(--gray-border);
+  background-color: var(--gray-bg);
+  color: #555555;
+}
+.belanja-hargaTotal {
+  border: 1px solid #00dd1d;
+  background-color: #9bff82;
+  color: #00af0f;
+}
+.belanja-remove {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: 2px solid red;
+  color: red;
+  padding: 1px;
+  padding-inline: 4px;
+  border-radius: 5px;
+  background-color: #00000000;
+  font-weight: bolder;
+}
+.belanja::-webkit-scrollbar {
+  display: none;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 100000;
+}
+.overlay.aktif {
+  display: block;
+  background-color: #00000048;
+}
 .card {
   background-color: white;
   padding: 1rem;
@@ -345,6 +421,7 @@ main figure {
   font-weight: bolder;
 }
 
+.nama,
 .tech-name {
   font-size: clamp(1.1rem, 1.8vw, 1.8rem);
   font-weight: bold;
@@ -400,7 +477,12 @@ main figure {
   flex-grow: 1;
   padding: 1rem 0px;
 }
-
+.spek {
+  padding: 10px;
+  border-left: 5px solid var(--green-bg);
+  background-color: var(--gray-bg);
+  border-radius: 8px;
+}
 .spesifikasi-button {
   background-color: white;
   border: var(--gray-border);
@@ -543,7 +625,6 @@ footer {
   }
 
   .footer-main {
-    width: 730px;
     grid-template-areas: "toplinks" "middle" "bottom";
   }
   .footer-middle {
@@ -562,6 +643,9 @@ footer {
   }
   #hero-text {
     height: 300px;
+  }
+  .scroll-wrap {
+    top: 20vh;
   }
   #hero-bottom {
     height: 70px;
