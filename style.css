@@ -315,11 +315,48 @@ main {
 }
 .belanja {
   scrollbar-width: none;
-  height: 100%;
   overflow: scroll;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 10px;
+  border: var(--gray-border);
+  border-radius: 1rem;
+  padding: 5px;
+  flex-grow: 1;
+}
+.belanja figure {
+  overflow: hidden;
+  border-radius: 1rem;
+}
+.belanja img {
+  width: 100%;
+}
+#checkoutBtn {
+  background-color: var(--green-bg);
+  border: none;
+  color: white;
+  padding: 8px;
+  font-weight: bold;
+  border-radius: 100rem;
+}
+.belanja-card {
+  border: var(--gray-border);
+  padding: 1rem;
+  border-radius: 1rem;
+  position: relative;
+}
+.belanja-cardBottom {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  display: flex;
+  gap: 10px;
+}
+.belanja-cardBtn {
+  background-color: var(--yellow-background);
+  border: none;
+  border-radius: 5px;
+  padding-inline: 5px;
 }
 .scroll-wrap {
   position: fixed;
@@ -332,48 +369,9 @@ main {
   overflow: hidden;
   border: var(--gray-border);
   border-radius: 1rem;
-}
-.belanja-item {
-  padding: 10px;
-  border-radius: 1rem;
-  border: var(--gray-border);
-  position: relative;
-}
-.belanja-harga,
-.belanja-diskon,
-.belanja-hargaTotal {
-  display: inline-block;
-  padding: 5px;
-  border-radius: 20rem;
-  font-weight: bolder;
-}
-.belanja-diskon {
-  border: 1px solid #ff9900;
-  background-color: #ffcd8b;
-  color: #d84f00;
-  margin-inline: 5px;
-}
-.belanja-harga {
-  border: var(--gray-border);
-  background-color: var(--gray-bg);
-  color: #555555;
-}
-.belanja-hargaTotal {
-  border: 1px solid #00dd1d;
-  background-color: #9bff82;
-  color: #00af0f;
-}
-.belanja-remove {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  border: 2px solid red;
-  color: red;
-  padding: 1px;
-  padding-inline: 4px;
-  border-radius: 5px;
-  background-color: #00000000;
-  font-weight: bolder;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
 }
 .belanja::-webkit-scrollbar {
   display: none;
@@ -614,7 +612,9 @@ footer {
     flex-direction: row;
     align-items: normal;
   }
-
+  .belanja {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .main-article {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -670,7 +670,9 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
   }
-
+  .belanja {
+    grid-template-columns: repeat(4, 1fr);
+  }
   /* Setting card iphone tetap span 2 column */
   .iphone {
     grid-column: span 2;
@@ -708,7 +710,8 @@ footer {
 @media (hover: hover) {
   .card:hover,
   .hero:hover,
-  .search:hover {
+  .search:hover,
+  .belanja-card:hover {
     box-shadow: 0px 5px 5px #c7c7c7;
   }
   .beli-button:hover {
