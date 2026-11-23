@@ -255,7 +255,9 @@ function renderBelanja() {
       ),
     );
     const bottom = renderObj("div", ["belanja-cardBottom"], "");
-    bottom.append(renderObj("p", ["belanja-cardCount"], item.count));
+    bottom.append(
+      renderObj("p", ["belanja-cardCount"], `Jumlah : ${item.count}`),
+    );
     const btn = renderObj("button", ["belanja-cardBtn"], "-");
     btn.addEventListener("click", (event) => {
       const cd = event.target.closest(".belanja-card");

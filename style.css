@@ -130,7 +130,7 @@ nav {
   background-color: var(--gray-bg);
   display: flex;
 }
-#search-bar {
+.search-bar {
   border: none;
   background-color: #00000000;
   flex-grow: 1;
@@ -599,6 +599,25 @@ footer {
   z-index: 2;
 }
 
+/* Untuk benchmark.html */
+
+#benchmark {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+#benchmark .card {
+  flex-grow: 1;
+}
+#line {
+  width: auto;
+  border-left: var(--gray-border);
+}
+#benchmark figure {
+  height: 300px;
+  background-color: var(--gray-bg);
+}
+
 /* TABLET VIEW */
 @media (min-width: 761px) {
   #header-container {
@@ -658,6 +677,9 @@ footer {
     border-top: none;
     width: auto;
     margin-block: 0;
+  }
+  #benchmark {
+    flex-direction: row;
   }
 }
 
