@@ -161,29 +161,336 @@ let katalogItem = [
   },
   {
     id: 5,
-    hightLight: "NEW RELEASE",
+    hightLight: "GARANSI RESMI iBOX",
     type: "Computer",
     category: "computer",
-    productName: "MacBook Pro M3 (Contoh Komputer)",
+    productName: "MacBook Pro 14 M3 512GB Space Gray",
     price: 24999000,
     currency: "id",
-    link: "assets/social.png",
+    link: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80",
     displayText:
-      "Laptop berperforma tinggi dengan chip M3 untuk kebutuhan kerja berat dan editing.",
+      "Laptop pro bertenaga chip Apple M3 dengan layar Liquid Retina XDR 120Hz dan daya tahan baterai hingga 22 jam.",
     bestFor:
-      "Penyuntingan video resolusi 4K/8K, pengembangan software atau programming skala besar, serta efisiensi daya luar biasa untuk para pekerja profesional kreatif.",
-    discount: 5,
-    tag: ["Apple M3", "16GB RAM", "512GB SSD", "Liquid Retina XDR"],
+      "Penyuntingan video resolusi 4K/8K, pengembangan software atau programming skala besar, desain grafis profesional, serta efisiensi daya luar biasa sepanjang hari.",
+    discount: 8,
+    tag: ["Apple M3", "16GB Unified RAM", "512GB SSD", "Liquid Retina XDR"],
     specs: {
-      Processor: "Apple M3 Chip (8-core CPU)",
-      "RAM & Storage": "16GB Unified RAM / 512GB SSD",
-      Grafis: "10-core GPU",
-      Layar: "14.2 inci Liquid Retina XDR",
+      Processor: "Apple M3 Chip (8-core CPU, 10-core GPU)",
+      "RAM & Storage": "16GB Unified Memory / 512GB SSD",
+      Layar: "14.2 inci Liquid Retina XDR, ProMotion 120Hz",
+      Port: "MagSafe 3, 2x Thunderbolt / USB 4, HDMI, SDXC",
       Baterai: "Hingga 22 Jam Pemutaran Film",
     },
-    brand: "Apple",
-    class: "computer",
+    brand: "Iphone",
+    class: "galaxy",
+    tagColor: "orangeTag",
+    count: 0,
+  },
+  {
+    id: 6,
+    hightLight: "BEST SELLER",
+    type: "Android Phone",
+    category: "phone",
+    productName: "Xiaomi 14 12GB/256GB Leica",
+    price: 11999000,
+    currency: "id",
+    link: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=600&q=80",
+    displayText:
+      "Flagship ringkas dengan lensa optik Leica Summilux, chipset Snapdragon 8 Gen 3, dan pengisian cepat 90W HyperCharge.",
+    bestFor:
+      "Fotografi jalanan dan potret bernuansa khas Leica, penggunaan satu tangan yang nyaman pada layar 6.36 inci, serta pengisian daya penuh dalam 31 menit.",
+    discount: 12,
+    tag: ["Leica Optics", "SD 8 Gen 3", "90W HyperCharge", "LTPO 120Hz"],
+    specs: {
+      Chipset: "Snapdragon 8 Gen 3 (4 nm)",
+      "RAM & Storage": "12GB LPDDR5X / 256GB UFS 4.0",
+      "Kamera Utama": "50 MP Leica Main + 50 MP Telephoto + 50 MP Ultrawide",
+      "Kamera Depan": "32 MP",
+      Baterai: "4610 mAh (90W Wired, 50W Wireless)",
+      Layar: "6.36 inci CrystalRes AMOLED 1.5K, 120Hz",
+    },
+    brand: "Xiaomi",
+    class: "galaxy",
+    tagColor: "orangeTag",
+    count: 0,
+  },
+  {
+    id: 7,
+    hightLight: "PURE ANDROID",
+    type: "Android Phone",
+    category: "phone",
+    productName: "Google Pixel 8 Pro 256GB",
+    price: 15499000,
+    currency: "id",
+    link: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=600&q=80",
+    displayText:
+      "Kamera komputasional terbaik dari Google dengan chip Tensor G3, Magic Editor AI, dan dukungan update OS hingga 7 tahun.",
+    bestFor:
+      "Hasil foto point-and-shoot paling natural di segala kondisi cahaya, penyuntingan foto berbasis AI, serta pengalaman Android murni yang bersih.",
+    discount: 10,
+    tag: ["Google Tensor G3", "Pixel Camera", "Super Actua", "7-Yr Updates"],
+    specs: {
+      Chipset: "Google Tensor G3 (4 nm)",
+      "RAM & Storage": "12GB RAM / 256GB Storage",
+      "Kamera Utama": "50 MP Wide + 48 MP Ultrawide + 48 MP 5x Telephoto",
+      "Kamera Depan": "10.5 MP Autofocus",
+      Baterai: "5050 mAh (30W Fast Charging)",
+      Layar: "6.7 inci Super Actua LTPO OLED, 120Hz",
+    },
+    brand: "Google",
+    class: "galaxy",
     tagColor: "blueTag",
+    count: 0,
+  },
+  {
+    id: 8,
+    hightLight: "FLAGSHIP KILLER",
+    type: "Android Phone",
+    category: "phone",
+    productName: "OnePlus 12 16GB/512GB Emerald",
+    price: 14299000,
+    currency: "id",
+    link: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80",
+    displayText:
+      "Performa ekstrem dengan RAM 16GB, kamera Hasselblad generasi ke-4, dan baterai jumbo 5400mAh dengan 100W SUPERVOOC.",
+    bestFor:
+      "Multitasking berat tanpa kompromi, sesi gaming marathon dengan sistem pendingin Dual Cryo-velocity VC, serta pengisian baterai kilat 26 menit.",
+    discount: 15,
+    tag: ["Hasselblad", "16GB RAM", "100W SUPERVOOC", "SD 8 Gen 3"],
+    specs: {
+      Chipset: "Snapdragon 8 Gen 3 (4 nm)",
+      "RAM & Storage": "16GB LPDDR5X / 512GB UFS 4.0",
+      "Kamera Utama": "50 MP Sony LYT-808 + 64 MP Periscope + 48 MP Ultrawide",
+      "Kamera Depan": "32 MP",
+      Baterai: "5400 mAh (100W Wired, 50W Wireless)",
+      Layar: "6.82 inci 2K ProXDR LTPO AMOLED, 120Hz",
+    },
+    brand: "One Plus",
+    class: "galaxy",
+    tagColor: "orangeTag",
+    count: 0,
+  },
+  {
+    id: 9,
+    hightLight: "NOISE CANCELLING PRO",
+    type: "Audio Gadget",
+    category: "tws",
+    productName: "Sony WF-1000XM5 Wireless ANC",
+    price: 3899000,
+    currency: "id",
+    link: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80",
+    displayText:
+      "Peredam bising aktif (ANC) kelas dunia dengan prosesor ganda dan audio resolusi tinggi LDAC yang jernih.",
+    bestFor:
+      "Perjalanan pesawat atau komuter harian yang bising, penikmat musik audiophile yang menginginkan detail suara presisi, serta panggilan telepon jernih.",
+    discount: 18,
+    tag: ["Best-in-Class ANC", "Hi-Res LDAC", "8.4mm Driver", "Multipoint"],
+    specs: {
+      Chipset: "Integrated Processor V2 + HD Noise Cancelling Processor QN2e",
+      "Daya Tahan": "8 Jam (ANC On) + 16 Jam (Charging Case)",
+      Driver: "8.4mm Dynamic Driver X",
+      "Ketahanan Air": "IPX4 Splash-proof",
+      Konektivitas: "Bluetooth 5.3 (SBC, AAC, LDAC, LC3)",
+    },
+    brand: "Sony",
+    class: "tws",
+    tagColor: "blueTag",
+    count: 0,
+  },
+  {
+    id: 10,
+    hightLight: "SUPER FAST CHARGING",
+    type: "Power Accessories",
+    category: "powerbank",
+    productName: "Samsung Powerbank 20.000mAh 45W",
+    price: 799000,
+    currency: "id",
+    link: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=600&q=80",
+    displayText:
+      "Kapasitas ekstra besar 20.000mAh dengan 3 port USB-C yang mendukung Super Fast Charging 2.0 hingga 45W.",
+    bestFor:
+      "Mengisi daya hingga 3 perangkat sekaligus (smartphone, tablet, maupun laptop ringan) saat perjalanan jauh atau berkemah.",
+    discount: 15,
+    tag: ["20000mAh", "45W Super Fast", "Triple USB-C", "Eco Design"],
+    specs: {
+      Kapasitas: "20000 mAh",
+      "Output Max": "45W Super Fast Charging 2.0 (PD 3.0 PPS)",
+      Port: "3x USB Type-C",
+      Fitur: "Simultaneous Multi-Device Charging",
+      Dimensi: "152 x 76 x 25.5 mm (402g)",
+    },
+    brand: "Samsung",
+    class: "anker",
+    tagColor: "blueTag",
+    count: 0,
+  },
+  {
+    id: 11,
+    hightLight: "TIPIS & RINGAN",
+    type: "Computer",
+    category: "computer",
+    productName: "MacBook Air 13 M3 8GB/256GB Midnight",
+    price: 17499000,
+    currency: "id",
+    link: "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=600&q=80",
+    displayText:
+      "Desain super tipis 1,13 cm tanpa kipas yang hening, bertenaga chip Apple M3 dan dukungan hingga dua layar eksternal.",
+    bestFor:
+      "Mahasiswa, pekerja mobile, dan eksekutif yang membutuhkan laptop ultra-portabel berbobot hanya 1,24 kg namun tetap kencang untuk kerja harian.",
+    discount: 7,
+    tag: ["Apple M3", "Ultra Thin 1.13cm", "18h Battery", "Liquid Retina"],
+    specs: {
+      Processor: "Apple M3 Chip (8-core CPU, 8-core GPU)",
+      "RAM & Storage": "8GB Unified Memory / 256GB SSD",
+      Layar: "13.6 inci Liquid Retina True Tone",
+      Port: "MagSafe 3, 2x Thunderbolt / USB 4, Audio Jack",
+      Baterai: "Hingga 18 Jam Pemakaian Nirkabel",
+    },
+    brand: "Iphone",
+    class: "galaxy",
+    tagColor: "orangeTag",
+    count: 0,
+  },
+  {
+    id: 12,
+    hightLight: "VALUE FOR MONEY",
+    type: "Android Phone",
+    category: "phone",
+    productName: "Redmi Note 13 Pro+ 5G 12GB/512GB",
+    price: 5799000,
+    currency: "id",
+    link: "https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=600&q=80",
+    displayText:
+      "Kamera flagship 200MP OIS, layar lengkung AMOLED 1.5K, tahan air IP68, dan charger kilat 120W HyperCharge di dalam kotak.",
+    bestFor:
+      "Pengguna yang menginginkan fitur rasa flagship seperti sertifikasi tahan air IP68, layar lengkung mewah, dan kamera 200MP dengan harga terjangkau.",
+    discount: 12,
+    tag: ["200MP OIS", "120W HyperCharge", "IP68 Waterproof", "Curved AMOLED"],
+    specs: {
+      Chipset: "MediaTek Dimensity 7200-Ultra (4 nm)",
+      "RAM & Storage": "12GB RAM / 512GB Storage",
+      "Kamera Utama": "200 MP OIS + 8 MP Ultrawide + 2 MP Macro",
+      "Kamera Depan": "16 MP",
+      Baterai: "5000 mAh (120W HyperCharge - Penuh 19 Menit)",
+      Layar: "6.67 inci 1.5K CrystalRes Curved AMOLED, 120Hz",
+    },
+    brand: "Xiaomi",
+    class: "galaxy",
+    tagColor: "blueTag",
+    count: 0,
+  },
+  {
+    id: 13,
+    hightLight: "ULTRA FLAGSHIP",
+    type: "Android Phone",
+    category: "phone",
+    productName: "Samsung Galaxy S24 Ultra 512GB",
+    price: 21999000,
+    currency: "id",
+    link: "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?auto=format&fit=crop&w=600&q=80",
+    displayText:
+      "Rangka Titanium tangguh dengan S Pen terintegrasi, Snapdragon 8 Gen 3 for Galaxy, dan kamera telefoto periskop 50MP 5x zoom.",
+    bestFor:
+      "Produktivitas tingkat tinggi dengan stylus S Pen, konser atau fotografi jarak jauh dengan zoom optik tajam, serta performa gaming maksimal.",
+    discount: 9,
+    tag: ["S Pen Built-in", "Titanium Frame", "SD 8 Gen 3", "200MP Quad Tele"],
+    specs: {
+      Chipset: "Snapdragon 8 Gen 3 for Galaxy (4 nm)",
+      "RAM & Storage": "12GB RAM / 512GB Storage",
+      "Kamera Utama": "200 MP + 50 MP (5x) + 10 MP (3x) + 12 MP",
+      "Kamera Depan": "12 MP Dual Pixel",
+      Baterai: "5000 mAh (45W Super Fast Charging 2.0)",
+      Layar: "6.8 inci QHD+ Dynamic AMOLED 2X Anti-Reflective",
+    },
+    brand: "Samsung",
+    class: "galaxy",
+    tagColor: "orangeTag",
+    count: 0,
+  },
+  {
+    id: 14,
+    hightLight: "WORKSTATION PRO",
+    type: "Computer",
+    category: "computer",
+    productName: "ASUS Zenbook 14 OLED UX3405",
+    price: 16499000,
+    currency: "id",
+    link: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=600&q=80",
+    displayText:
+      "Laptop Windows ultra-ringan 1,2 kg dengan prosesor Intel Core Ultra 7 AI, layar 3K Lumina OLED 120Hz, dan baterai 75Wh.",
+    bestFor:
+      "Pekerja kantoran, analis data, dan kreator konten berbasis Windows yang membutuhkan akurasi warna 100% DCI-P3 dalam bodi metal tipis.",
+    discount: 11,
+    tag: [
+      "Intel Core Ultra 7",
+      "16GB LPDDR5X",
+      "1TB NVMe SSD",
+      "3K OLED 120Hz",
+    ],
+    specs: {
+      Processor: "Intel Core Ultra 7 155H (16-core, Intel AI Boost)",
+      "RAM & Storage": "16GB LPDDR5X / 1TB PCIe 4.0 SSD",
+      Layar: "14.0 inci 3K (2880x1800) OLED 120Hz, 100% DCI-P3",
+      Port: "2x Thunderbolt 4, 1x USB-A 3.2, HDMI 2.1, Audio Jack",
+      Baterai: "75Wh (Hingga 15 Jam Pemakaian)",
+    },
+    brand: "Samsung",
+    class: "galaxy",
+    tagColor: "blueTag",
+    count: 0,
+  },
+  {
+    id: 15,
+    hightLight: "STUDIO HEADPHONE",
+    type: "Audio Gadget",
+    category: "tws",
+    productName: "Sony WH-1000XM5 Over-Ear ANC",
+    price: 4999000,
+    currency: "id",
+    link: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=600&q=80",
+    displayText:
+      "Headphone nirkabel premium dengan 8 mikrofon peredam bising, bantalan kulit lembut tanpa tekanan, dan baterai 30 jam.",
+    bestFor:
+      "Fokus kerja di kantor terbuka atau kafe ramai, penerbangan jarak jauh lintas benua, serta kenyamanan pemakaian berjam-jam tanpa pegal.",
+    discount: 14,
+    tag: ["8-Mic ANC", "30h Battery", "3-Min Quick Charge", "LDAC Hi-Res"],
+    specs: {
+      Chipset: "Integrated Processor V1 + QN1",
+      "Daya Tahan": "30 Jam (ANC On) / 40 Jam (ANC Off)",
+      Driver: "30mm Precision-Engineered Carbon Fiber",
+      Mikrofon: "8 Mikrofon dengan AI Noise Reduction",
+      Konektivitas: "Bluetooth 5.2 Multipoint + Kabel 3.5mm",
+    },
+    brand: "Sony",
+    class: "tws",
+    tagColor: "orangeTag",
+    count: 0,
+  },
+  {
+    id: 16,
+    hightLight: "MAGSAFE WIRELESS",
+    type: "Power Accessories",
+    category: "powerbank",
+    productName: "Anker MagGo 10.000mAh Qi2 Magnetic",
+    price: 899000,
+    currency: "id",
+    link: "https://images.unsplash.com/photo-1618424181497-157f25b6ddd5?auto=format&fit=crop&w=600&q=80",
+    displayText:
+      "Powerbank magnetik bersertifikat Qi2 15W yang menempel kuat di punggung iPhone lengkap dengan layar pintar & kickstand lipat.",
+    bestFor:
+      "Pengguna iPhone 12 hingga iPhone 15 series yang ingin mengisi daya tanpa kabel sambil tetap nyaman menggenggam atau menonton video.",
+    discount: 16,
+    tag: ["Qi2 15W Magnetic", "10000mAh", "Smart Display", "Built-in Stand"],
+    specs: {
+      Kapasitas: "10000 mAh",
+      "Output Max": "15W Qi2 Wireless / 27W USB-C PD",
+      Fitur: "Smart OLED Battery Display & Foldable Kickstand",
+      Kompatibilitas: "MagSafe / Qi2 Certified Devices",
+      Keamanan: "ActiveShield 2.0 Thermal Control",
+    },
+    brand: "Anker",
+    class: "anker",
+    tagColor: "orangeTag",
     count: 0,
   },
 ];
@@ -752,16 +1059,17 @@ document.addEventListener("DOMContentLoaded", function () {
         elem.count++;
         buy++;
         updateBucketDisplay();
-
-        alert(
-          `🎉 Pesanan Berhasil!\nProduk: ${elem.productName}\nMetode: ${paymentMethod === "full" ? "Bayar Lunas" : "Cicilan 6 Bulan"}\nJumlah di keranjang: ${elem.count} (Sisa stok: ${prodData.stock})`,
-        );
       };
     }
   });
 });
 
-renderFilterBtn(searchTagType, "brand");
+function FilterUnik(tipe) {
+  const key = tipe === "brand" ? "brand" : "type";
+  return [...new Set(katalogItem.map((item) => item[key]))];
+}
+
+renderFilterBtn(FilterUnik("brand"), "brand");
 function renderFilterBtn(filter, tipe) {
   searchTipe.textContent = "";
   let fragment = document.createDocumentFragment();
@@ -776,10 +1084,10 @@ function renderFilterBtn(filter, tipe) {
           .querySelectorAll(".filter-btn")
           .forEach((n) => n.classList.remove("aktif"));
         tagBtn.classList.add("aktif");
-        const filtered =
-          tipe === "brand"
-            ? katalogItem.filter((n) => n.brand === tagBtn.textContent)
-            : katalogItem.filter((n) => n.type === tagBtn.textContent);
+        const key = tipe === "brand" ? "brand" : "type";
+        const filtered = katalogItem.filter(
+          (n) => n[key] === tagBtn.textContent,
+        );
         renderKatalog(filtered);
       }
     });
@@ -789,13 +1097,7 @@ function renderFilterBtn(filter, tipe) {
 }
 
 filterOpt.addEventListener("change", (event) => {
-  let filter;
-  if (event.target.value === "brand") {
-    filter = brands.map((n) => n.brandName);
-  } else if (event.target.value === "tipe") {
-    filter = katalogItem.map((n) => n.type);
-  }
-  renderFilterBtn(filter, event.target.value);
+  renderFilterBtn(FilterUnik(event.target.value), event.target.value);
   renderKatalog(katalogItem);
 });
 
