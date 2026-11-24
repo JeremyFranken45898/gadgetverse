@@ -382,3 +382,35 @@ bucket.addEventListener("click", () => {
 popUp.addEventListener("click", (event) => {
   if (event.target === popUp) popUp.classList.remove("aktif");
 });
+
+//darren
+// Use 'Z' for UTC, or an offset like '+07:00' for WIB / '-05:00' for EST
+const targetDate = new Date("2027-01-01T00:00:00Z").getTime();
+const display = document.getElementById("global-countdown");
+
+const countdownInterval = setInterval(() => {
+  // Date.now() automatically returns the current UTC timestamp in milliseconds
+  const now = Date.now();
+  const distance = targetDate - now;
+
+  if (distance <= 0) {
+    clearInterval(countdownInterval);
+    display.textContent = "Promo Telah Berakhir!";
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+  );
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Format with leading zeros
+  const d = String(days).padStart(2, "0");
+  const h = String(hours).padStart(2, "0");
+  const m = String(minutes).padStart(2, "0");
+  const s = String(seconds).padStart(2, "0");
+
+  display.textContent = `${d}d ${h}h ${m}m ${s}s`;
+}, 1000);
