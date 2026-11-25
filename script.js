@@ -354,12 +354,10 @@ searchInput.addEventListener("blur", () => {
 
 
 //darren
-// Use 'Z' for UTC, or an offset like '+07:00' for WIB / '-05:00' for EST
 const targetDate = new Date("2027-01-01T00:00:00Z").getTime();
 const display = document.getElementById("global-countdown");
 
 const countdownInterval = setInterval(() => {
-  // Date.now() automatically returns the current UTC timestamp in milliseconds
   const now = Date.now();
   const distance = targetDate - now;
 
