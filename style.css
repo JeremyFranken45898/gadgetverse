@@ -33,6 +33,10 @@ body {
   background-color: #f7f8fa;
   font-family: "Inter", sans-serif;
   font-size: small;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 header {
@@ -529,12 +533,12 @@ main figure {
   flex-grow: 1;
   padding: 1rem 0px;
 }
-
 footer {
   background-color: white;
   border-top: var(--gray-border);
-  padding: 1rem;
+  padding: 2rem;
   line-height: 2rem;
+  width: 100%;
 }
 
 .footer-main {
@@ -543,9 +547,9 @@ footer {
   grid-template-areas: "middle" "bottom" "toplinks";
   grid-template-columns: auto;
   grid-template-rows: repeat(3, auto);
-  width: auto;
+  width: 100%;
+  max-width: 1500px;
 }
-
 .footer-middle,
 .top-links {
   text-align: center;
@@ -1377,4 +1381,20 @@ footer {
   select:hover {
     cursor: pointer;
   }
+}
+#captchaOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.captcha-box {
+  padding: 24px;
+  border-radius: 12px;
+  background: white;
+  text-align: center;
 }
