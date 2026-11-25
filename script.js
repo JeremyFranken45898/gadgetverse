@@ -75,7 +75,7 @@ let katalogItem = [
     brand: "Iphone",
     class: "iphone",
     tagColor: "orangeTag",
-    count: 0,
+    count: 5,
   },
   {
     id: 2,
@@ -103,7 +103,7 @@ let katalogItem = [
     brand: "Samsung",
     class: "galaxy",
     tagColor: "blueTag",
-    count: 0,
+    count: 5,
   },
   {
     id: 3,
@@ -130,7 +130,7 @@ let katalogItem = [
     brand: "Anker",
     class: "anker",
     tagColor: "orangeTag",
-    count: 0,
+    count: 5,
   },
   {
     id: 4,
@@ -157,7 +157,7 @@ let katalogItem = [
     brand: "Soundcore",
     class: "tws",
     tagColor: "blueTag",
-    count: 0,
+    count: 5,
   },
   {
     id: 5,
@@ -184,7 +184,7 @@ let katalogItem = [
     brand: "Iphone",
     class: "galaxy",
     tagColor: "orangeTag",
-    count: 0,
+    count: 5,
   },
   {
     id: 6,
@@ -212,7 +212,7 @@ let katalogItem = [
     brand: "Xiaomi",
     class: "galaxy",
     tagColor: "orangeTag",
-    count: 0,
+    count: 5,
   },
   {
     id: 7,
@@ -240,7 +240,7 @@ let katalogItem = [
     brand: "Google",
     class: "galaxy",
     tagColor: "blueTag",
-    count: 0,
+    count: 5,
   },
   {
     id: 8,
@@ -268,7 +268,7 @@ let katalogItem = [
     brand: "One Plus",
     class: "galaxy",
     tagColor: "orangeTag",
-    count: 0,
+    count: 5,
   },
   {
     id: 9,
@@ -295,7 +295,7 @@ let katalogItem = [
     brand: "Sony",
     class: "tws",
     tagColor: "blueTag",
-    count: 0,
+    count: 5,
   },
   {
     id: 10,
@@ -322,7 +322,7 @@ let katalogItem = [
     brand: "Samsung",
     class: "anker",
     tagColor: "blueTag",
-    count: 0,
+    count: 5,
   },
   {
     id: 11,
@@ -349,7 +349,7 @@ let katalogItem = [
     brand: "Iphone",
     class: "galaxy",
     tagColor: "orangeTag",
-    count: 0,
+    count: 5,
   },
   {
     id: 12,
@@ -377,7 +377,7 @@ let katalogItem = [
     brand: "Xiaomi",
     class: "galaxy",
     tagColor: "blueTag",
-    count: 0,
+    count: 5,
   },
   {
     id: 13,
@@ -405,7 +405,7 @@ let katalogItem = [
     brand: "Samsung",
     class: "galaxy",
     tagColor: "orangeTag",
-    count: 0,
+    count: 5,
   },
   {
     id: 14,
@@ -437,7 +437,7 @@ let katalogItem = [
     brand: "Samsung",
     class: "galaxy",
     tagColor: "blueTag",
-    count: 0,
+    count: 5,
   },
   {
     id: 15,
@@ -464,7 +464,7 @@ let katalogItem = [
     brand: "Sony",
     class: "tws",
     tagColor: "orangeTag",
-    count: 0,
+    count: 5,
   },
   {
     id: 16,
@@ -491,7 +491,7 @@ let katalogItem = [
     brand: "Anker",
     class: "anker",
     tagColor: "orangeTag",
-    count: 0,
+    count: 5,
   },
 ];
 
@@ -735,7 +735,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </table>
           </div>
           <div class="compare-warning">
-            <p>⚠️ Belum ada produk pembanding yang dipilih atau tersedia di kategori ini.</p>
+            <p>Belum ada produk pembanding yang dipilih atau tersedia di kategori ini.</p>
           </div>
         </div>
       `;
@@ -803,7 +803,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "Natural Titanium": "assets/iphone-1200.png",
         "Black Titanium": "assets/iphone-1200.png",
       },
-      stock: 5,
     },
     2: {
       type: "phone",
@@ -816,37 +815,29 @@ document.addEventListener("DOMContentLoaded", function () {
         "Marble Gray":
           "https://images.samsung.com/is/image/samsung/p6pim/id/2401/gallery/id-galaxy-s24-sm-s921bzaaxid-539294578?$720_576_JPG$",
       },
-      stock: 3,
     },
     3: {
       type: "accessory",
       colors: {
-        Black:
-          "https://m.media-amazon.com/images/I/61y8v4zW2SL._AC_SL1500_.jpg",
-        White:
-          "https://m.media-amazon.com/images/I/51g1K6fL2cL._AC_SL1500_.jpg",
-        Blue: "https://m.media-amazon.com/images/I/61r5o6zW2SL._AC_SL1500_.jpg",
+        Black: "assets/anker-1200.jpg",
+        White: "assets/anker-400.jpg",
       },
-      stock: 8,
     },
     4: {
       type: "accessory",
       colors: {
-        Black:
-          "https://m.media-amazon.com/images/I/61p3l9S3-xL._AC_SL1500_.jpg",
-        White:
-          "https://m.media-amazon.com/images/I/61tJtN89-xL._AC_SL1500_.jpg",
-        Pink: "https://m.media-amazon.com/images/I/61k8w9S3-xL._AC_SL1500_.jpg",
+        Black: "assets/tws-1200.webp",
+        White: "assets/tws-1200.webp",
       },
-      stock: 4,
     },
     5: {
       type: "computer",
       colors: {
-        "Space Gray": "assets/social.png",
-        Silver: "assets/social.png",
+        "Space Gray":
+          "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80",
+        Silver:
+          "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&w=600&q=80",
       },
-      stock: 5,
     },
   };
 
@@ -878,12 +869,12 @@ document.addEventListener("DOMContentLoaded", function () {
       if (!elem) return;
 
       const prodData = extendedProductData[elem.id] || {
-        type: "accessory",
+        type: elem.category === "phone" ? "phone" : "accessory",
+        capacities: { Standard: elem.price },
         colors: { Default: elem.link },
-        stock: 5,
       };
 
-      if (prodData.stock <= 0) {
+      if (elem.count <= 0) {
         alert("Maaf, stok produk ini habis!");
         return;
       }
@@ -1049,27 +1040,31 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       });
 
-      // Logika tambah count & keranjang dipindahkan ke Konfirmasi Pesanan, modal tidak langsung ditutup
+      // Stok menggunakan properti count di katalogItem (awal 5, berkurang tiap dibeli)
       document.getElementById("modal-confirm-buy").onclick = function () {
-        if (prodData.stock <= 0) {
+        if (elem.count <= 0) {
           alert("Maaf, stok produk ini sudah habis!");
           return;
         }
-        prodData.stock--;
-        elem.count++;
+        elem.count--;
         buy++;
+        const qtyInCart = 5 - elem.count;
         updateBucketDisplay();
+
+        alert(
+          `🎉 Pesanan Berhasil!\nProduk: ${elem.productName}\nMetode: ${paymentMethod === "full" ? "Bayar Lunas" : "Cicilan 6 Bulan"}\nJumlah di keranjang: ${qtyInCart} (Sisa stok: ${elem.count})`,
+        );
       };
     }
   });
 });
 
-function FilterUnik(tipe) {
+function getUniqueFilter(tipe) {
   const key = tipe === "brand" ? "brand" : "type";
   return [...new Set(katalogItem.map((item) => item[key]))];
 }
 
-renderFilterBtn(FilterUnik("brand"), "brand");
+renderFilterBtn(getUniqueFilter("brand"), "brand");
 function renderFilterBtn(filter, tipe) {
   searchTipe.textContent = "";
   let fragment = document.createDocumentFragment();
@@ -1097,7 +1092,8 @@ function renderFilterBtn(filter, tipe) {
 }
 
 filterOpt.addEventListener("change", (event) => {
-  renderFilterBtn(FilterUnik(event.target.value), event.target.value);
+  const selectedMode = event.target.value;
+  renderFilterBtn(getUniqueFilter(selectedMode), selectedMode);
   renderKatalog(katalogItem);
 });
 
@@ -1125,7 +1121,8 @@ function renderBelanja() {
   popUp.querySelector(".belanja").textContent = "";
   const fragment = document.createDocumentFragment();
   for (const item of katalogItem) {
-    if (!item.count) continue;
+    const jumlahBeli = 5 - item.count;
+    if (jumlahBeli <= 0) continue;
     const div = renderObj("div", ["belanja-card"], "");
     const img = renderObj("img", [], "");
     img.src = item.link;
@@ -1139,23 +1136,24 @@ function renderBelanja() {
       renderObj(
         "p",
         ["belanja-cardHarga"],
-        `Total: Rp ${(((item.price * (100 - item.discount)) / 100) * item.count).toLocaleString("ID")}`,
+        `Total: Rp ${(((item.price * (100 - item.discount)) / 100) * jumlahBeli).toLocaleString("ID")}`,
       ),
     );
     const bottom = renderObj("div", ["belanja-cardBottom"], "");
     bottom.append(
-      renderObj("p", ["belanja-cardCount"], `Jumlah : ${item.count}`),
+      renderObj("p", ["belanja-cardCount"], `Jumlah : ${jumlahBeli}`),
     );
     const btn = renderObj("button", ["belanja-cardBtn"], "-");
     btn.addEventListener("click", (event) => {
       const cd = event.target.closest(".belanja-card");
       const targetItem = katalogItem.find((n) => n === item);
-      targetItem.count--;
+      targetItem.count++;
+      const sisaBeli = 5 - targetItem.count;
       cd.querySelector(".belanja-cardHarga").textContent =
-        `Total: Rp ${(((item.price * (100 - item.discount)) / 100) * targetItem.count).toLocaleString("ID")}`;
+        `Total: Rp ${(((item.price * (100 - item.discount)) / 100) * sisaBeli).toLocaleString("ID")}`;
       cd.querySelector(".belanja-cardCount").textContent =
-        `Jumlah : ${targetItem.count}`;
-      if (targetItem.count === 0) {
+        `Jumlah : ${sisaBeli}`;
+      if (sisaBeli === 0) {
         cd.remove();
       }
       buy--;
