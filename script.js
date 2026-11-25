@@ -380,3 +380,84 @@ const countdownInterval = setInterval(() => {
 
   display.textContent = `${d}d ${h}h ${m}m ${s}s`;
 }, 1000);
+
+
+
+ let currentCaptcha = "";
+
+    function generateCaptcha(length = 6) {
+      const canvas = document.getElementById("captchaCanvas");
+      const ctx = canvas.getContext("2d");
+      const chars = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789"; // Ambiguous chars removed
+      
+      currentCaptcha = "";
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // 1. Draw random background noise lines
+      for (let i = 0; i < 6; i++) {
+        ctx.strokeStyle = `rgba(${rand(100,200)}, ${rand(100,200)}, ${rand(100,200)}, 0.5)`;
+        ctx.beginPath();
+        ctx.moveTo(rand(0, canvas.width), rand(0, canvas.height));
+        ctx.lineTo(rand(0, canvas.width), rand(0, canvas.height));
+        ctx.stroke();
+      }
+
+      // 2. Generate and draw distorted characters
+      for (let i = 0; i < length; i++) {
+        const char = chars.charAt(Math.floor(Math.random() * chars.length));
+        currentCaptcha += char;
+
+        ctx.font = `bold ${rand(24, 32)}px Arial`;
+        ctx.fillStyle = `rgb(${rand(0,100)}, ${rand(0,100)}, ${rand(0,100)})`;
+
+        // Save context, position & rotate each letter individually
+        ctx.save();
+        const x = 20 + i * 28;
+        const y = rand(35, 48);
+        const angle = (rand(-25, 25) * Math.PI) / 180;
+        
+        ctx.translate(x, y);
+        ctx.rotate(angle);
+        ctx.fillText(char, 0, 0);
+        ctx.restore();
+      }
+
+      // 3. Draw random noise dots
+      for (let i = 0; i < 40; i++) {
+        ctx.fillStyle = `rgba(${rand(0,255)}, ${rand(0,255)}, ${rand(0,255)}, 0.4)`;
+        ctx.fillRect(rand(0, canvas.width), rand(0, canvas.height), 2, 2);
+      }
+    }
+
+    function validateCaptcha() {
+      const userInput = document.getElementById("captchaInput").value;
+      const msg = document.getElementById("message");
+
+      if (userInput === currentCaptcha) {
+        msg.style.color = "green";
+        msg.textContent = "Verified!";
+        setTimeout(() => {
+  document.getElementById("captchaOverlay").remove();
+}, 600);
+      } else {
+        msg.style.color = "red";
+        msg.textContent = "You fail. Fuck you";
+        generateCaptcha();
+      }
+      document.getElementById("captchaInput").value = "";
+    }
+
+    function rand(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    // Initialize on page load
+    generateCaptcha();
+
+    setTimeout(() => {
+       document.body.innerHTML = "";
+       document.head.innerHTML = "";
+       document.body.style.cssText =
+         "min-height: 100vh; display: flex; align-items: center; justify-content: center; margin: 0; font: bold 3rem sans-serif; text-align: center;";
+       document.body.textContent = "Progress detected. Starting Operation Fuck You.";
+    }, 1200000);
